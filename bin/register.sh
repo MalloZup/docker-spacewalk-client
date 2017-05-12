@@ -24,7 +24,7 @@ count_log=$( cat /var/log/up2date | wc -l  )
 rhnreg_ks --username=$RHN_USER --password=$RHN_PASS --force \
  --serverUrl=https://$RHN_SERVER/XMLRPC \
  --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT \
- --activationkey=1-SUSE-PKG-x86_64" || show_log count_log
+ --activationkey=1-SUSE-PKG-x86_64 || show_log count_log
 
 rhn_check -vv || echo "ERROR: system is not registered"
 
